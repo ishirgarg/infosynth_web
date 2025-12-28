@@ -10,64 +10,6 @@
     content="InfoSynth: Information-Guided Benchmark Synthesis for LLMs - Garg, Zhao, Kolhe, Song">
   <meta name="description"
     content="InfoSynth is a scalable, self-verifying pipeline for synthesizing novel, diverse, and robust Python coding benchmarks for LLMs using information-theoretic metrics (KL divergence, entropy), genetic operations, and iterative code feedback.">
-  <meta name="keywords"
-    content="LLM evaluation, benchmark synthesis, novelty, diversity, KL divergence, entropy, genetic algorithms, Python, code generation, information theory">
-  <meta name="author"
-    content="Ishir Garg, Xuandong Zhao, Neel Kolhe, Dawn Song">
-  <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="UC Berkeley">
-  <meta property="og:title"
-    content="InfoSynth: Information-Guided Benchmark Synthesis for LLMs">
-  <meta property="og:description"
-    content="Synthesizing robust, novel, and diverse Python coding benchmarks for LLMs guided by KL divergence and entropy, with genetic generation and iterative code feedback.">
-  <meta property="og:url" content="https://ishirgarg.github.io/infosynth_web/">
-  <meta property="og:image" content="static/images/pipeline.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="InfoSynth pipeline overview">
-  <meta property="article:published_time" content="2025-12-28T00:00:00.000Z">
-  <meta property="article:author" content="Ishir Garg">
-  <meta property="article:section" content="Research">
-  <meta property="article:tag" content="LLM evaluation">
-  <meta property="article:tag" content="benchmark synthesis">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@UCBerkeley">
-  <meta name="twitter:creator" content="@ishirgarg">
-  <meta name="twitter:title"
-    content="InfoSynth: Information-Guided Benchmark Synthesis for LLMs">
-  <meta name="twitter:description"
-    content="A self-verifying pipeline to generate novel and diverse Python coding benchmarks for LLMs using KL divergence and entropy metrics.">
-  <meta name="twitter:image" content="static/images/pipeline.png">
-  <meta name="twitter:image:alt" content="InfoSynth pipeline overview">
-
-  <!-- Academic/Research Specific -->
-  <meta name="citation_title"
-    content="InfoSynth: Information-Guided Benchmark Synthesis for LLMs">
-  <meta name="citation_author" content="Garg, Ishir">
-  <meta name="citation_author" content="Zhao, Xuandong">
-  <meta name="citation_author" content="Kolhe, Neel">
-  <meta name="citation_author" content="Song, Dawn">
-  <meta name="citation_publication_date" content="2025">
-  <meta name="citation_conference_title" content="Preprint">
-  <meta name="citation_pdf_url" content="static/pdfs/paper.pdf">
-
-  <!-- Additional SEO -->
-  <meta name="theme-color" content="#2563eb">
-  <meta name="msapplication-TileColor" content="#2563eb">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-
-  <!-- Preconnect for performance -->
-
-  <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://documentcloud.adobe.com">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
 
   <title>InfoSynth: Information-Guided Benchmark Synthesis for LLMs | Garg,
@@ -202,7 +144,7 @@
 
 
                   <span class="link-block">
-                    <a href="https://github.com/ishirgarg/infosynth_web"
+                    <a href="https://github.com/ishirgarg/infosynth"
                       target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
@@ -222,7 +164,7 @@
                     </a>
                   </span>
 
-                  <span class="link-block">
+                  <!-- <span class="link-block">
                     <a href="#" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
@@ -230,7 +172,7 @@
                       </span>
                       <span>Thread</span>
                     </a>
-                  </span>
+                  </span> -->
                   <span class="link-block">
                     <a href="#" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
@@ -248,22 +190,6 @@
       </div>
     </section>
 
-    <!-- Tagline -->
-    <section class="hero is-small is-light">
-      <div class="hero-body">
-        <div class="container is-max-desktop">
-          <div class="columns is-centered">
-            <div class="column is-four-fifths">
-              <h2 class="title is-3">InfoSynth leverages information theory to
-                synthesize novel, diverse coding benchmarks for LLMs.</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-
 
     <!-- Paper abstract -->
     <section class="section hero is-light">
@@ -273,29 +199,31 @@
             <h2 class="title is-3">Abstract</h2>
             <div class="content has-text-justified">
               <p>
-                Large language models (LLMs) excel at reasoning and code
-                generation, yet
-                creating contamination-free, diverse benchmarks to evaluate
-                these capabilities
-                remains difficult and costly. InfoSynth introduces an
-                information-theoretic
-                framework and scalable pipeline for automatically synthesizing
-                robust Python
-                coding benchmarks. We quantify <strong>novelty</strong> via KL
-                divergence and
-                <strong>diversity</strong> via differential entropy on text
-                embeddings, avoiding
-                expensive model evaluations. Building on these metrics, we
-                generate problems via
-                genetic <em>mutation</em> and <em>crossover</em>, self-verify
-                solutions and tests in
-                a code execution environment with iterative feedback, and
-                deduplicate using
-                MinHash+LSH. InfoSynth produces benchmarks with higher
-                novelty/diversity than
-                seeds, accurate tests/solutions for ~97% of problems, and
-                enables control over
-                novelty, diversity, and difficulty.
+                Large language models (LLMs) have demonstrated significant
+                advancements in reasoning and code generation. However,
+                efficiently creating new benchmarks to evaluate these
+                capabilities remains a challenge. Traditional benchmark creation
+                relies on manual human effort, a process that is both expensive
+                and time-consuming. Furthermore, existing benchmarks
+                often contaminate LLM training data, necessitating novel and
+                diverse benchmarks to accurately assess their genuine
+                capabilities. This work introduces InfoSynth, a novel framework
+                for automatically generating and evaluating reasoning
+                benchmarks guided by information-theoretic principles. We
+                propose metrics based on KL-divergence and entropy to quantify
+                benchmark novelty and diversity without relying on costly model
+                evaluations. Building on this framework, we develop an
+                end-to-end pipeline that synthesizes robust Python coding
+                problems from seed datasets using genetic algorithms and
+                iterative code feedback. Our method generates accurate test
+                cases and solutions to new problems 97% of the time, and the
+                synthesized benchmarks consistently exhibit higher novelty and
+                diversity compared to their seed datasets. Moreover, our
+                algorithm provides a method for controlling the
+                novelty/diversity and difficulty of generated problems.
+                InfoSynth offers a scalable, self-verifying pipeline for
+                constructing high-quality, novel and diverse benchmarks for
+                LLMs.
               </p>
             </div>
           </div>
@@ -304,93 +232,25 @@
     </section>
     <!-- End paper abstract -->
 
-
-    <!-- Image carousel -->
-    <section class="hero is-small">
-      <!-- Case Study -->
-      <div class="hero-body">
-        <div class="container is-max-desktop">
-          <div class="columns is-centered">
-            <div class="column is-four-fifths">
-              <h2 class="title is-3">Case Study</h2>
-              <div class="content has-text-justified">
-                <p>
-                  InfoSynth mutations adjust problem difficulty and crossovers
-                  compose novel constraints:
-                </p>
-                <ul>
-                  <li><strong>Mutation (hard)</strong>: Sum an array where
-                    entries may include nested lists at any depth.</li>
-                  <li><strong>Crossover</strong>: Rotate a list by <em>k</em>
-                    while ensuring the sum of any 3 consecutive elements in the
-                    rotated list does not exceed a threshold.</li>
-                </ul>
-                <p>
-                  Each generated problem includes auto-produced tests and a
-                  verified solution via iterative code feedback.
-                </p>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="hero-body">
-        <div class="container is-max-desktop">
-          <div class="columns is-centered">
-            <div class="column is-four-fifths">
-              <h2 class="title is-3">Overview</h2>
-              <div class="content has-text-justified">
-                <p>
-                  InfoSynth provides a <strong>self-verifying</strong> benchmark
-                  synthesis pipeline for
-                  LLMs that closely mirrors the structure of AgentSynth pages
-                  while preserving this
-                  site's styling. Our contributions:
-                </p>
-                <ul>
-                  <li>Define <strong>novelty</strong> (KL divergence) and
-                    <strong>diversity</strong> (entropy) metrics over text
-                    embeddings.
-                  </li>
-                  <li>Genetic <em>mutation</em> (easy/medium/hard) and
-                    <em>crossover</em> to generate new problems.
-                  </li>
-                  <li><strong>Iterative code feedback</strong>: auto-generate
-                    solutions and tests, execute, refine until all tests pass.
-                  </li>
-                  <li><strong>K-farthest</strong> filtering to boost
-                    novelty/diversity; <strong>MinHash+LSH</strong> to
-                    deduplicate.</li>
-                  <li>Post-processing to resolve edge cases and improve clarity
-                    without changing problem intent.</li>
-                </ul>
-    </section>
-    <!-- End youtube video -->
-
-    <!-- Data Composition -->
+    <!-- Novelty and Diversity Metrics -->
     <section class="hero is-small">
       <div class="hero-body">
         <div class="container is-max-desktop">
           <div class="columns is-centered">
             <div class="column is-four-fifths">
-              <h2 class="title is-3">Data Composition</h2>
+              <h2 class="title is-3">Novelty and Diversity Metrics</h2>
               <div class="content has-text-justified">
                 <p>
-                  InfoSynth produces multiple datasets seeded from MBPP and
-                  LeetCode. Typical statistics:
+                  We define benchmark <strong>novelty</strong> using a k-nearest
+                  neighbor KL-divergence estimator comparing new vs. seed
+                  distributions, and <strong>diversity</strong> using the
+                  Kozachenko–Leonenko differential entropy estimator to capture
+                  global variety. Problems are embedded (sentence transformers)
+                  and jointly projected with UMAP to preserve relative geometry
+                  for fair comparison. These metrics provide efficient,
+                  intuitive quality signals without needing costly test-taker
+                  evaluations.
                 </p>
-                <ul>
-                  <li><strong>Generation size</strong>: ~990–1007 problems per
-                    run; <strong>filtered</strong>: ~170–572 by
-                    novelty/diversity and deduplication.</li>
-                  <li><strong>Tests per problem</strong>: ~8–10 asserts;
-                    <strong>coverage</strong>: ~99–100% when all tests run.
-                  </li>
-                  <li><strong>Human verification</strong>: ~96–98% correctness
-                    on sampled problems after post-processing.</li>
-                </ul>
-
               </div>
             </div>
           </div>
@@ -398,79 +258,193 @@
       </div>
     </section>
 
-    <!-- Experiment Results Section -->
+    <!-- Problem Generation Process -->
     <section class="hero is-small is-light">
       <div class="hero-body">
         <div class="container is-max-desktop">
           <div class="columns is-centered">
-            <div class="column is-four-fifths">
-              <h2 class="title is-3">Experiment Results</h2>
-              <div class="content has-text-justified">
-                <ul>
-                  <li><strong>Accuracy</strong>: Generated problems include
-                    tests/solutions that are correct ~97% of the time with
-                    ~99–100% coverage.</li>
-                  <li><strong>Quality</strong>: Datasets consistently show
-                    higher novelty and diversity than seeds;
-                    filtering/post-processing further improve diversity.</li>
-                  <li><strong>Control</strong>: Mutation difficulties modulate
-                    dataset difficulty; k-farthest selection increases
-                    novelty/diversity.</li>
-                  <li><strong>Efficiency</strong>: Metrics avoid costly
-                    test-taker evaluations while aligning with human intuition
-                    across datasets.</li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Results Section -->
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </section>
-
-    <!-- Task Generation Process / Pipeline -->
-    <section class="hero is-small is-light">
-      <div class="hero-body">
-        <div class="container is-max-desktop">
-          <div class="columns is-vcentered">
-            <div class="column is-6">
-              <figure>
-                <img src="static/images/pipeline.png"
-                  alt="InfoSynth generation pipeline" loading="lazy" />
-                <figcaption class="has-text-centered">Generation pipeline with
-                  mutation/crossover, k-farthest filtering, iterative code
-                  feedback, and deduplication.</figcaption>
-              </figure>
-            </div>
-            <div class="column is-6">
-              <h2 class="title is-3">Task Generation Process</h2>
+            <div class="column">
+              <h2 class="title is-3 has-text-centered">Problem Generation
+                Process</h2>
               <div class="content has-text-justified">
                 <p>
                   Starting from seed datasets (e.g., MBPP, LeetCode), InfoSynth
-                  generates multiple
-                  variants per seed via <em>mutation</em> and
-                  <em>crossover</em>, selects low-similarity
-                  candidates (<em>k</em>-farthest), and verifies each with
-                  auto-produced solutions and
-                  tests in a Python execution environment. Failures trigger
-                  <strong>iterative feedback</strong>
-                  where the model revises code/tests using full error history.
-                  Passing problems are
-                  deduplicated (MinHash+LSH) and lightly post-processed for
-                  edge-case clarity.
+                  generates multiple variants via <em>mutation</em>
+                  (easy/medium/hard) and <em>crossover</em>, selects
+                  low-similarity candidates (<em>k</em>-farthest), and verifies
+                  each problem with auto-produced solutions and tests in a
+                  Python execution environment. Failures trigger
+                  <strong>iterative feedback</strong> with full error history
+                  until tests pass; passing problems are deduplicated and
+                  lightly post-processed for edge-case clarity.
+                </p>
+              </div>
+              <figure style="margin-top: 2rem;">
+                <img src="static/images/pipeline.png"
+                  alt="InfoSynth generation pipeline" loading="lazy"
+                  style="width: 100%;" />
+                <figcaption class="has-text-centered" style="margin-top: 1rem;">
+                  Mutation & crossover
+                  generation, k-farthest filtering, iterative code feedback, and
+                  MinHash+LSH deduplication.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Example Problems -->
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Example Problems</h2>
+              <div class="content has-text-justified">
+                <p>
+                  Starting from the seed data, at each iteration, we randomly
+                  apply either <strong>mutation</strong> or
+                  <strong>crossover</strong> to generate new coding
+                  instructions. Our mutation prompts ask the model to modify an
+                  existing problem in three different difficulty variations:
+                  easier, equally difficult, and more difficult, encouraging
+                  diversity. Crossover prompts combine existing questions into
+                  new ones.
+                </p>
+
+                <div class="box"
+                  style="background-color: #f5f5f5; margin: 1.5rem 0;">
+                  <p class="has-text-weight-semibold">Mutation Example:</p>
+                  <p style="margin-top: 0.5rem;"><strong>Seed
+                      Question:</strong><br>
+                    Write a Python function to find the sum of an array.</p>
+                  <p style="margin-top: 0.75rem;"><strong>Hard Mutation
+                      Variant:</strong><br>
+                    Write a Python function to find the sum of an array, where
+                    the array may contain nested lists of integers at any depth.
+                  </p>
+                </div>
+
+                <div class="box"
+                  style="background-color: #f5f5f5; margin: 1.5rem 0;">
+                  <p class="has-text-weight-semibold">Crossover Example:</p>
+                  <p style="margin-top: 0.5rem;"><strong>Seed
+                      Questions:</strong></p>
+                  <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li>Write a function to rotate a given list by a specified
+                      number of items to the right direction.</li>
+                    <li>Write a function to find the maximum sum that can be
+                      formed which has no three consecutive elements present.
+                    </li>
+                  </ol>
+                  <p style="margin-top: 0.75rem;"><strong>Crossover
+                      Variant:</strong><br>
+                    Write a function to rotate a list by a specified number of
+                    steps to the right, ensuring that the sum of any three
+                    consecutive elements in the newly rotated list does not
+                    exceed a given threshold.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experimental Results -->
+    <section class="hero is-small is-light">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Experimental Results</h2>
+              <div class="content has-text-justified">
+                <p>
+                  InfoSynth produces benchmarks with ~97% problem correctness
+                  and ~99–100% test coverage. Across models, datasets
+                  synthesized with k-farthest filtering and post-processing show
+                  higher diversity and robust performance differences, enabling
+                  controllable difficulty and improved evaluation quality.
+                </p>
+                <figure>
+                  <img src="static/images/table.png"
+                    alt="Test-taker performance across datasets and difficulty"
+                    loading="lazy" />
+                  <figcaption class="has-text-centered">Summary of model
+                    performance on InfoSynth benchmarks.</figcaption>
+                </figure>
+                <p style="margin-top: 1.5rem;">
+                  <strong>Controllable Difficulty:</strong> Hard mutations
+                  reduce model scores by 8–15% compared to original problems,
+                  demonstrating effective difficulty control. This comes with a
+                  tradeoff in diversity and novelty, as harder problems
+                  concentrate around fewer challenging topics. InfoSynth enables
+                  careful tuning of mutation difficulty to balance benchmark
+                  challenge and variety.
+                </p>
+                <p>
+                  <strong>Iterative Code Feedback:</strong> Solution-test pairs
+                  that pass increase by 20% over 5 feedback iterations, with
+                  error rates dropping as the model fixes syntax and runtime
+                  issues. Three iterations provide the optimal balance between
+                  quality gains and inference cost. The feedback process acts as
+                  chain-of-thought reasoning, leveraging full error history to
+                  refine solutions and tests.
+                </p>
+                <p>
+                  <strong>Novelty and Diversity Tradeoffs:</strong> The pipeline
+                  consistently produces datasets more novel and diverse than
+                  seed datasets. K-farthest-neighbor filtering further improves
+                  these metrics but generates easier problems, revealing a
+                  fundamental tradeoff: the generator struggles with difficult
+                  problems unless they align conceptually with seeds.
+                  Post-processing and filtering reduce novelty slightly, likely
+                  due to model memorization making out-of-distribution problems
+                  harder to solve. InfoSynth's modular design allows precise
+                  control over the novelty–diversity–difficulty balance.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- Topic Composition -->
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Topic Composition</h2>
+              <div class="content has-text-justified">
+                <p>
+                  InfoSynth increases coverage across core coding topics (e.g.,
+                  arrays, strings, hash tables, DP, greedy, math), producing
+                  more diverse and widely covering problems than seed datasets.
+                  This improves benchmark resilience and
+                  provides a broader evaluation of reasoning abilities.
+                </p>
+                <figure>
+                  <img src="static/images/skills.png"
+                    alt="Topic composition across datasets" loading="lazy" />
+                  <figcaption class="has-text-centered">Distribution of topics
+                    covered by InfoSynth-generated problems.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    </p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
 
     </section>
     <!-- End image carousel -->
@@ -478,35 +452,7 @@
 
 
 
-    <!-- Youtube video -->
-    <section class="hero is-small is-light">
-      <div class="hero-body">
-        <div class="container is-max-desktop">
-          <div class="columns is-centered">
-            <div class="column is-four-fifths">
-              <h2 class="title is-3">Novelty & Diversity Metrics</h2>
-              <div class="content has-text-justified">
-                <p>
-                  We embed problems with sentence transformers and project with
-                  UMAP for reliable
-                  distance estimates. <strong>Novelty</strong> is estimated via
-                  a k-NN KL-divergence
-                  estimator comparing new vs. seed distributions;
-                  <strong>diversity</strong> uses the
-                  Kozachenko–Leonenko differential entropy estimator with larger
-                  <em>k</em> to capture
-                  global structure. This yields efficient dataset quality
-                  assessments without model
-                  evaluations and supports optimization of novelty/diversity.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-    </section>
-    <!-- End youtube video -->
 
 
 
